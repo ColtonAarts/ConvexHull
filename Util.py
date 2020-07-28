@@ -4,6 +4,10 @@ import math
 def convert_to_polar(point):
     r = math.sqrt(point[0] ** 2 + point[1] ** 2)
     theta = math.atan(point[1] / point[0])
+    if point[0] < 0:
+        theta += math.pi
+    elif point[0] > 0 and point[1] < 0:
+        theta += 2 * math.pi
     return r, theta
 
 
